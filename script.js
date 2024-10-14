@@ -33,9 +33,11 @@ botones.forEach(boton => {
 
             // Comprueba si la pantalla tiene un solo carácter o muestra "¡Error!"
             if (pantalla.textContent.length === 1 || pantalla.textContent === "¡Error!") {
+
                 // Si es así, reinicia a "0"
                 pantalla.textContent = "0"; 
             } else {
+
                 // Elimina el último carácter de la pantalla
                 pantalla.textContent = pantalla.textContent.slice(0, -1); 
             }
@@ -47,50 +49,68 @@ botones.forEach(boton => {
 
         if (boton.id === "igual") {
             try {
+
                 // Verifica si la expresión contiene un divisor
                 if (pantalla.textContent.includes('/')) {
+
                     // Muestra "¡Error!" si hay división
                     pantalla.textContent = "¡Error!"; 
                 } else {
+
                     // Evalúa la expresión matemática mostrada en la pantalla
                     const resultado = eval(pantalla.textContent);
+
                     // Comprueba el límite de caracteres del resultado
                     if (resultado.toString().length > limiteCaracteres) {
+
                         // Muestra "¡Error!" si el resultado excede el límite
                         pantalla.textContent = "¡Error!"; 
+
                     } else {
+
                         // Muestra el resultado de la evaluación
                         pantalla.textContent = resultado; 
                     }
                 }
             } catch {
+
                 // Captura cualquier error durante la evaluación y muestra "¡Error!"
                 pantalla.textContent = "¡Error!"; 
             }
-            // Sale de la función
+
+            // Sale de la función, evitando la ejecución del resto del código
             return; 
         } 
         
         // Verifica si la longitud del texto en la pantalla excede el límite
+        // Si se ha alcanzado el límite, no se permite agregar más caracteres
         if (pantalla.textContent.length >= limiteCaracteres && boton.id !== "borrar") {
-            // Si se ha alcanzado el límite, no se permite agregar más caracteres
+
+            // Sale de la función, evitando la ejecución del resto del código
             return;  
         }
 
         // Agrega números y operadores a la pantalla
+        // Reemplaza el contenido de la pantalla si es "0" o "¡Error!"
         if (pantalla.textContent === "0" || pantalla.textContent === "¡Error!") {
-            // Reemplaza el contenido de la pantalla si es "0" o "¡Error!"
-            pantalla.textContent = botonOn; 
+
+            //se está actualizando el contenido de la pantalla (el elemento pantalla) 
+            //para que muestre el valor del botón que se ha presionado
+            pantalla.textContent = botonOn;
+
         } else {
+
             // Define un arreglo con los operadores matemáticos
             const operadores = ['+', '-', '*', '/']; 
+            
             // Obtiene el último carácter del contenido actual de la pantalla
             const ultimoCaracter = pantalla.textContent.slice(0, -1); 
 
             // Evita la entrada de múltiples operadores consecutivos
             // Si el último carácter y el nuevo son operadores, no se añade el nuevo
             if (operadores.includes(ultimoCaracter) && operadores.includes(botonOn)) {
-                
+
+                // Sale de la función, evitando la ejecución del resto del código
                 return; 
             }
 
