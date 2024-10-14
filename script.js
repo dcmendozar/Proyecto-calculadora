@@ -85,11 +85,12 @@ botones.forEach(boton => {
             // Define un arreglo con los operadores matemáticos
             const operadores = ['+', '-', '*', '/']; 
             // Obtiene el último carácter del contenido actual de la pantalla
-            const ultimoCaracter = pantalla.textContent.slice(-1); 
+            const ultimoCaracter = pantalla.textContent.slice(0, -1); 
 
             // Evita la entrada de múltiples operadores consecutivos
+            // Si el último carácter y el nuevo son operadores, no se añade el nuevo
             if (operadores.includes(ultimoCaracter) && operadores.includes(botonOn)) {
-                // Si el último carácter y el nuevo son operadores, no se añade el nuevo
+                
                 return; 
             }
 
