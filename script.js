@@ -39,7 +39,7 @@ botones.forEach(boton => {
             } else {
 
                 // Elimina el último carácter de la pantalla
-                pantalla.textContent = pantalla.textContent.slice(0, -1); 
+                pantalla.textContent = pantalla.textContent.slice(0,-1); 
             }
             // Sale de la función, evitando la ejecución del resto del código
             return; 
@@ -104,7 +104,7 @@ botones.forEach(boton => {
             const operadores = ['+', '-', '*', '/']; 
 
             // Obtiene el último carácter del contenido actual de la pantalla
-            const ultimoCaracter = pantalla.textContent.slice(0, -1); 
+            const ultimoCaracter = pantalla.textContent.slice(11); 
 
             // Evita la entrada de múltiples operadores consecutivos
             // Si el último carácter y el nuevo son operadores, no se añade el nuevo
