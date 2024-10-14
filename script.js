@@ -102,7 +102,7 @@ botones.forEach(boton => {
 
             // Define un arreglo con los operadores matemáticos
             const operadores = ['+', '-', '*', '/']; 
-            
+
             // Obtiene el último carácter del contenido actual de la pantalla
             const ultimoCaracter = pantalla.textContent.slice(0, -1); 
 
