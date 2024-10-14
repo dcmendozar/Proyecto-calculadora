@@ -1,0 +1,104 @@
+
+Copiar código
+* {
+    /* Remueve el margen por defecto de todos los elementos */
+    margin: 0; 
+    /* Remueve el relleno por defecto de todos los elementos */
+    padding: 0; 
+    /* Ajusta el modelo de caja para incluir el relleno y borde en el tamaño */
+    box-sizing: border-box;
+    /* Aplica una fuente sans-serif(categoria de fuente que no tiene serifas) a todo el contenido */ 
+    font-family: sans-serif; 
+}
+
+body {
+    /* Establece la altura mínima del cuerpo al 100% de la ventana visible */
+    min-height: 100vh; 
+    /* Define un color de fondo naranja */
+    background-color: rgb(255, 124, 71); 
+    /* Activa Flexbox(modelo unibidimensional),(Alinear elementos de forma vertical u horizontal), para organizar lo que hay adentro */
+    display: flex; 
+    /* Alinea lo que hay dentro de manera horizontal */
+    justify-content: center;
+   /* Alinea lo que hay dentro de manera vertical */
+    align-items: center; 
+}
+
+.calculadora {
+    /* Asigna un color de fondo claro para la calculadora */
+    background-color: rgb(242, 219, 161); 
+    /* Define un color de texto oscuro */
+    color: rgb(73, 76, 78); 
+    /* Utiliza CSS Grid(modelo bidimensional), para la disposición de los botones */
+    display: grid; 
+    /* Crea cuatro columnas de tamaño uniforme */
+    grid-template-columns: repeat(4, 1fr); 
+    /* Fija un ancho específico para la calculadora */
+    width: 350px; 
+    /* Aplica un relleno alrededor del contenido */
+    padding: 1rem; 
+    /* Redondea las esquinas del contenedor */
+    border-radius: 1rem;
+    /* Establece un espacio entre los elementos en la cuadrícula */ 
+    gap: 0.5rem; 
+}
+
+.pantalla {
+    /* Hace que la pantalla ocupe las cuatro columnas de la cuadrícula */
+    grid-column: 1 / 5; 
+    /* Establece un fondo blanco para la pantalla */
+    background-color: rgb(255, 255, 255); 
+    /* Aplica un relleno alrededor del contenido de la pantalla */
+    padding: 1rem; 
+    /* Define un tamaño de fuente grande para mostrar resultados */
+    font-size: 3rem; 
+    /* Alinea el texto hacia la derecha */
+    text-align: right;
+    /* Redondea las esquinas de la pantalla */ 
+    border-radius: 0.5rem; 
+}
+
+.boton {
+    /* Asigna un color de fondo oscuro a los botones */
+    background-color: rgb(6, 3, 36);
+    /* Define el color del texto como blanco */ 
+    color: rgb(255, 255, 255); 
+    /* Elimina el borde por defecto de los botones */
+    border: 0; 
+    /* Aplica un relleno alrededor de cada botón */
+    padding: 1rem; 
+    /* Establece un tamaño de fuente para el texto en los botones */
+    font-size: 1rem; 
+    /* Utiliza Flexbox para centrar el contenido dentro del botón */
+    display: flex; 
+    /* Centra el contenido horizontalmente dentro del botón */
+    justify-content: center; 
+    /* Centra el contenido verticalmente dentro del botón */
+    align-items: center; 
+    /* Redondea las esquinas del botón */
+    border-radius: 0.8rem; 
+    /* Cambia el cursor a un puntero al pasar sobre el botón */
+    cursor: pointer; 
+}
+
+.boton:hover {
+    /* Cambia el color de fondo al pasar el ratón sobre el botón */
+    background-color: rgb(221, 180, 76); 
+}
+
+#cero {
+    /* Permite que el botón "0" ocupe el espacio de dos columnas */
+    grid-column: span 2; 
+}
+
+#igual {
+    /* Permite que el botón "igual" ocupe el espacio de dos filas */
+    grid-row: span 2; 
+    /* Establece un color de fondo distintivo para el botón "igual" */
+    background-color: rgb(233, 77, 20); 
+}
+
+#igual:hover {
+    /* Cambia el color de fondo del botón "igual" al pasar el ratón sobre él */
+    background-color: rgb(132, 167, 227); 
+}
